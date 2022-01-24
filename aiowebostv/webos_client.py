@@ -487,11 +487,11 @@ class WebOsClient:
                 pass
 
         if app_id == "com.webos.app.livetv":
-            try:
-            	time.sleep(1)
-                await self.subscribe_current_channel(self.set_current_channel_state)
-            except WebOsTvCommandError:
-                pass
+            #try:
+        	time.sleep(2)
+            await self.subscribe_current_channel(self.set_current_channel_state)
+            #except WebOsTvCommandError:
+            #    pass
 
         if self.state_update_callbacks and self.do_state_update:
             await self.do_state_update_callbacks()

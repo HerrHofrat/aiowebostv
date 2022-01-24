@@ -485,8 +485,9 @@ class WebOsClient:
             except WebOsTvCommandError:
                 pass
 
-        if app_id == "com.webos.app.livetv" and self._current_channel is None:
+        if app_id == "com.webos.app.livetv":
             try:
+            	time.sleep(1)
                 await self.subscribe_current_channel(self.set_current_channel_state)
             except WebOsTvCommandError:
                 pass
